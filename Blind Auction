@@ -1,0 +1,28 @@
+def find_highest_bidder(bidders_dict):
+    winner=""
+    highest_bid=0
+    for i in bidders_dict:
+        bid_amount=bidders_dict[i]
+        if bid_amount > highest_bid:
+            highest_bid=bid_amount
+            winner=i
+    print(f"The winner is {winner} with bid amount: {highest_bid}")
+
+from art import logo
+
+bids={}
+blind_auction="True"
+while blind_auction:
+    name=input("Enter name of the bidder: ")
+    bid=int(input("Enter amount of bid : $ "))
+    bids[name]=bid
+
+    x=input("Are there any more bidder. Type Yes or No :").lower()
+    if x=="no":
+        blind_auction="False"
+        find_highest_bidder(bids)
+    elif x=="yes":
+        print("\n" *100)
+    else:
+        print("Enter valid choice ")
+
