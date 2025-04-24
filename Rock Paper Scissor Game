@@ -1,0 +1,50 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+game_image=[rock,paper,scissors]
+x=int(input("enter you choice: rock as 0 ,paper as 1 or scissors as 2 \n"))
+print(game_image[x])
+y=random.randint(0,2)
+print(y)
+game_image=[rock,paper,scissors]
+print(game_image[y])
+if y==0 and x==2:
+    print("computer win")
+elif y==0 and x==1:
+    print("you win")
+elif y==1 and x==0:
+    print("computer wins")
+elif y==1 and x==2:
+    print("you win")
+elif y==2 and x==0:
+    print("you win")
+elif y==2 and x==1:
+    print("computer wins")
+elif x==y:
+    print("draw")
+else:
+    print("enter valid choice")
