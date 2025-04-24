@@ -1,0 +1,37 @@
+import art
+def add(n1, n2):
+    return n1 + n2
+def subtract(n1,n2):
+    return n1 - n2
+def multiply(n1,n2):
+    return n1 * n2
+def divide(n1,n2):
+    return n1 / n2
+
+def calculator():
+    operation={
+    "+":add , "-":subtract , "*":multiply , "/":divide
+     }
+
+    n1=float(input("Enter 1st number: "))
+
+    calculation=True
+
+    while calculation:
+        for keys in operation:
+            print(keys)
+        choice=input("Enter operation:  ")
+        n2=float(input("Enter 2nd number: "))
+        result=operation[choice](n1,n2)
+        print(f"{n1} {choice} {n2} = {result}")
+
+        choice2=input("want to continue calculation with previous result {result} or new calculation . Type 'Y' OR 'N' :")
+        if choice2=='Y':
+            n1=result
+        else:
+            calculation=False
+            calculator()
+
+print(art.logo)
+calculator()
+
